@@ -33,7 +33,9 @@ jobs:
 
       - name: Build APK
         working-directory: android-project
-        run: gradle assembleDebug --no-daemon
+        run: |
+         rm -rf ~/.gradle/caches/modules-2/files-2.1/androidx.compose.material3
+         gradle assembleDebug --no-daemon --refresh-dependencies
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
