@@ -19,9 +19,7 @@ jobs:
           unzip -o TeriosAutoPost-Android-10-Detik.zip -d android-project
 - name : Add AndroidX properties
 run: |
-cp gradle.properties
-android-project/
-gradle.properties
+cp gradle.properties android-project/gradle.properties
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
